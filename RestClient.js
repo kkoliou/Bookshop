@@ -9,10 +9,6 @@ function getWorks(work) {
 
     let url = `https://reststop.randomhouse.com/resources/works?search=${work}`
     fetch(url, init)
-        .then(response => {
-            console.log("ok")
-        })
-        .catch(error => {
-            console.log(error)
-        })
+        .then(response => response.json())
+        .catch(error => console.log(error))
 }

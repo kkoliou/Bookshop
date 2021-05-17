@@ -1,0 +1,35 @@
+.searchForm {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+form.searchForm input[type=text] {
+  padding: 8px;
+  font-size: 17px;
+  width: 200px;
+  background: #0c3d021e;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+}
+
+form.searchForm input[type=text]:hover {
+  background-color: #2a522a85;
+  color: white;
+}
+
+form.searchForm button {
+  width: 30px;
+  height: 30px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+#searchBtn {
+  background: url(images/search.png);
+  background-size: cover;
+}
