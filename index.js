@@ -1,15 +1,6 @@
-function getWorks() {
-    let searchInput = document.querySelector("#searchInput").value
-    let headers = new Headers()
-    headers.append("Accept", "application/json")
+const express = require("express")
+const app = express()
+const port = 5050
+app.use('/', express.static('public'))
 
-    let init = {
-        method: "GET",
-        headers: headers
-    }
-
-    let url = `https://reststop.randomhouse.com/resources/works?search=${searchInput}`
-    fetch(url, init)
-        .then(response => response.json())
-        .catch(error => console.log(error))
-}
+app.listen(port, () => console.log(`listening on port ${port}`))
