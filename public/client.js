@@ -19,15 +19,17 @@ function getWorks() {
                 presentWorks(works)
             }
         })
-        .catch(error => console.log(error))
+        .catch(error => setupEmptyState())
 }
 
 function presentWorks(works) {
-    for (i = 0; i < works.length; i++) {
-        
+    let layout = ""
+    for (let item of works) {
+        layout += `<div class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}</p></div>`
     }
+    document.querySelector("#works").innerHTML = layout
 }
 
 function setupEmptyState() {
-
+    document.querySelector("#works").innerHTML = "<p>No results found!</p>"
 }

@@ -1,3 +1,7 @@
+body {
+  padding: 10px;
+}
+
 .searchForm {
   display: flex;
   align-items: center;
