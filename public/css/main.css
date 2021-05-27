@@ -28,7 +28,6 @@ form.searchForm input[type=text]:hover {
 form.searchForm button {
   width: 30px;
   height: 30px;
-  font-size: 17px;
   border: none;
   cursor: pointer;
 }
@@ -57,4 +56,26 @@ form.searchForm button {
   border-radius: 8px;
   padding: 8px;
   margin-top: 20px;
+  position: relative;
+}
+
+#likeBtn {
+  background: url(../images/like.png);
+  background-size: cover;
+}
+
+.work-item button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.fav {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }

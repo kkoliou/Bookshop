@@ -25,11 +25,19 @@ function getWorks() {
 function presentWorks(works) {
     let layout = ""
     for (let item of works) {
-        layout += `<div class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}</p></div>`
+        layout += `<div class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}</p>
+        <div class="fav">
+        <button id="likeBtn" onclick='favButtonPressed()'></button>
+        </div>
+        </div>`
     }
     document.querySelector("#works").innerHTML = layout
 }
 
 function setupEmptyState() {
     document.querySelector("#works").innerHTML = "<p>No results found!</p>"
+}
+
+function favButtonPressed() {
+    
 }
