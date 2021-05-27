@@ -30,10 +30,9 @@ form.searchForm button {
   font-size: 17px;
   border: none;
   cursor: pointer;
-  margin-left: 8px;
 }
 
 #searchBtn {
-  background: url(images/search.png);
+  background: url(../images/search.png);
   background-size: cover;
 }
