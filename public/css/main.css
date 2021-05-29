@@ -59,8 +59,13 @@ form.searchForm button {
   position: relative;
 }
 
-#likeBtn {
+.likeBtn {
   background: url(../images/like.png);
+  background-size: cover;
+}
+
+.likeBtnFilled {
+  background: url(../images/like_filled.png);
   background-size: cover;
 }
 
