@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const port = 5050
+let favorites = new Map()
 
 app.use('/', express.static('public'))
 app.use(express.json())
@@ -8,18 +9,27 @@ app.listen(port, () => console.log(`listening on port ${port}`))
 
 app.put('/favorite', function(req, res) {
     let data = req.body
-    console.log(data)
-    res.json({
-        status: responses.SUCCESS
-    })
+    if (favorites.has(data.workid)) {
+        res.json({
+            status: responses.ALREADY_FAVORITE
+        })
+        console.log(`Already favorite work with id ${data.workid}`)
+    } else {
+        favorites.set(data.workid, data)
+        res.json({
+            status: responses.SUCCESS
+        })
+        console.log(`Added work with id ${data.workid}`)
+    }
 })
 
 app.delete('/favorite', function(req, res) {
     let data = req.body
-    console.log(data)
+    favorites.delete(data.workid)
     res.json({
         status: responses.SUCCESS
     })
+    console.log(`Deleted work with id ${data.workid}`)
 })
 
 const responses = {

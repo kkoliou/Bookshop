@@ -55,7 +55,7 @@ function favButtonPressed(index) {
         addToFavorites(work, function() {
             button.className = "likeBtnFilled"
         }, function() {
-            button.className = "likeBtn"
+            button.className = "likeBtnFilled"
             showAlreadyFavoriteAlert()
         })
     } 
