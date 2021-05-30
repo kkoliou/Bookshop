@@ -1,5 +1,33 @@
 body {
-  padding: 10px;
+  margin: 0;
+}
+
+.topnav {
+  background-color: #60745e;
+  overflow: hidden;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: #a1a8a173;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2e422c;
+  color: white;
 }
 
 .searchForm {
@@ -80,7 +108,13 @@ form.searchForm button {
   display: flex;
   justify-content: center;
   position: absolute;
+  padding: 4px;
   bottom: 0px;
   left: 0px;
   right: 0px;
+}
+
+.editBtn {
+  background: url(../images/edit_icon.png);
+  background-size: cover;
 }

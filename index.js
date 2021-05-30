@@ -32,6 +32,18 @@ app.delete('/favorite', function(req, res) {
     console.log(`Deleted work with id ${data.workid}`)
 })
 
+app.get('/favorites', function(req, res) {
+    let favs = []
+    for (let [key, value] of favorites) {
+        favs.push(value)
+    }
+
+    res.json({
+        status: responses.SUCCESS,
+        favorites: favs
+    })
+})
+
 const responses = {
 	SUCCESS: "success",
 	ALREADY_FAVORITE: "already_favorite",
