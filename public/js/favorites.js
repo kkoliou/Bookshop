@@ -36,14 +36,9 @@ function presentFavorites(favs) {
 }
 
 function favButtonPressed(index) {
-    
+
 }
 
 function editButtonPressed(index) {
 
-}
-
-const responses = {
-	SUCCESS: "success",
-	ERROR: "error",
 }
