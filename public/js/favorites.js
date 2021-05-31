@@ -1,5 +1,25 @@
 var favorites = []
 
+document.querySelector("#searchInput").addEventListener("keyup", function() {
+    searchWork()
+})
+
+function searchWork() {
+    let searchInput = document.querySelector("#searchInput").value
+
+    var index = 0
+    for (let work of favorites) {
+        let contains = containsWord(searchInput, work)
+        let htmlItem = document.querySelector(`#work-item${index}`)
+        if (contains) {
+            htmlItem.style.display = ""
+        } else {
+            htmlItem.style.display = "none"
+        }
+        index++
+    }
+}
+
 function getFavorites() {
     let headers = new Headers()
     headers.append("Accept", "application/json")
@@ -24,7 +44,7 @@ function presentFavorites(favs) {
     let layout = ""
     var index = 0
     for (let item of favs) {
-        layout += `<div class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}</p>
+        layout += `<div id="work-item${index}" class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}</p>
         <div class="fav">
         <button id="likeBtn${index}" class="likeBtnFilled" onclick='favButtonPressed(${index})'></button>
         <button id="editBtn${index}" class="editBtn" onclick='editButtonPressed(${index})'></button>
@@ -47,5 +67,12 @@ function favButtonPressed(index) {
 }
 
 function editButtonPressed(index) {
-    
+
+}
+
+function containsWord(searchInput, work) {
+    if (work.titleweb.toLowerCase().includes(searchInput.toLowerCase())) {
+        return true
+    }
+    return false
 }
