@@ -1,7 +1,7 @@
 var favorites = []
 
 document.querySelector("#searchInput").addEventListener("keyup", function() {
-    searchWork()
+    setTimeout(() => { searchWork() }, 500);
 })
 
 function searchWork() {
@@ -67,7 +67,7 @@ function favButtonPressed(index) {
 }
 
 function editButtonPressed(index) {
-
+    window.open("edit.html", "_self")
 }
 
 function containsWord(searchInput, work) {

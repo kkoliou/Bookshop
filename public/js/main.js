@@ -10,7 +10,7 @@ function getWorks() {
         headers: headers
     }
 
-    let url = `https://reststop.randomhouse.com/resources/works?search=${searchInput}`
+    let url = `https://reststop.randomhouse.com/resources/works?max=100&search=${searchInput}`
     fetch(url, init)
         .then(response => response.json())
         .then(data => {

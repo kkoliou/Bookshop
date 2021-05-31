@@ -8,19 +8,21 @@
     <title>Assignment 2</title>
 </head>
 <body>
-    <header>
-        <nav class="topnav">
-            <a href="index.html">Home</a>
-            <a class="active" href="favorites.html">Favorites</a>
-        </nav>
-    </header>
-    <form class="searchForm" action="javascript:getFavorites()">
-        <input id="searchInput" type="text" placeholder="Search..." name="search">
-        <button id="searchBtn" type="submit"></button>
-    </form>
-    <div class="container">
-        <div id="works"></div>
-    </div>
+    <main>
+        <header>
+            <nav class="topnav">
+                <a href="index.html">Home</a>
+                <a class="active" href="favorites.html">Favorites</a>
+            </nav>
+        </header>
+        <form class="searchForm" action="javascript:getFavorites()">
+            <input id="searchInput" type="text" placeholder="Search..." name="search">
+            <button id="searchBtn" type="submit"></button>
+        </form>
+        <div class="container">
+            <div id="works"></div>
+        </div>
+    </main>
     <script src="js/favorites.js"></script>
     <script src="js/restclient.js"></script>
     <script>
