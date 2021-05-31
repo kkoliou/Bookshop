@@ -36,9 +36,16 @@ function presentFavorites(favs) {
 }
 
 function favButtonPressed(index) {
-
+    let work = favorites[index]
+    removeFromFavorites(work, function() {
+        const tmp = favorites.indexOf(index);
+        if (index > -1) {
+            favorites.splice(tmp, 1);
+        }
+        presentFavorites(favorites)
+    })
 }
 
 function editButtonPressed(index) {
-
+    
 }
