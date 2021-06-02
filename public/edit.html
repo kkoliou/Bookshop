@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/edit.css">
     <title>Assignment 2</title>
 </head>
 <body>
     <main>
         <button id="x" onclick="closeButtonTapped()">X</button>
-        <div class="info">
-            
-        </div>
+        <form class="info" action="javascript:saveWork()">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="authors">Authors</label>
+            <input type="text" id="authors">
+            <label for="comments">Comments</label>
+            <textarea type="text" id="comments"></textarea>
+            <input type="submit" value="Save">
+        </form>
     </main>
     <script src="js/edit.js"></script>
+    <script src="js/restclient.js"></script>
+    <script>
+        window.onload = presentWork()
+    </script>
 </body>
 </html>

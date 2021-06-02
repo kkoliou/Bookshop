@@ -44,7 +44,14 @@ function presentFavorites(favs) {
     let layout = ""
     var index = 0
     for (let item of favs) {
-        layout += `<div id="work-item${index}" class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}</p>
+        let commentsLayout = ""
+        if (item.comments != undefined && item.comments != "") {
+            commentsLayout += `<b>Comments:</b> ${item.comments}`
+        }
+
+        layout += `<div id="work-item${index}" class="work-item"><p><b>Title:</b> ${item.titleweb}<br><b>Author:</b> ${item.authorweb}<br>`
+        layout += commentsLayout
+        layout += `</p>
         <div class="fav">
         <button id="likeBtn${index}" class="likeBtnFilled" onclick='favButtonPressed(${index})'></button>
         <button id="editBtn${index}" class="editBtn" onclick='editButtonPressed(${index})'></button>
@@ -67,6 +74,8 @@ function favButtonPressed(index) {
 }
 
 function editButtonPressed(index) {
+    let work = favorites[index]
+    localStorage.setItem("workToEdit", JSON.stringify(work))
     window.open("edit.html", "_self")
 }
 

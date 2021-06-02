@@ -44,6 +44,15 @@ app.get('/favorites', function(req, res) {
     })
 })
 
+app.post('/edit', function(req, res) {
+    let data = req.body
+    favorites.set(data.workid, data)
+    res.json({
+        status: responses.SUCCESS
+    })
+    console.log(`Edited work with id ${data.workid}`)
+})
+
 const responses = {
 	SUCCESS: "success",
 	ALREADY_FAVORITE: "already_favorite",
